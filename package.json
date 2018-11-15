@@ -1,0 +1,23 @@
+{
+  "name": "hotel-booking-system-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iwayankit/Hotel-Booking-System.git"
+  },
+  "author": "iwayankit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iwayankit/Hotel-Booking-System/issues"
+  },
+  "homepage": "https://github.com/iwayankit/Hotel-Booking-System#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.3.12"
+  }
+}
