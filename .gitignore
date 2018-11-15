@@ -1,18 +1,2 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-node_modules/*
 # Dependency directories
 node_modules/
-
-# dotenv environment variables file
-.env
-models/.DS_Store
-.DS_Store
-.idea/
-*.pem
-.vs/*
-.vscode/*
-async.js
-.env

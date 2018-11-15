@@ -8,7 +8,7 @@ var userSchema = new Schema({
         lastName: { type: String }
     },
     email: { type: String,  match: /\S+@\S+\.\S+/ },
-    contactNumber: { type: String, required: true },
+    mobile: { type: String },
     dateOfBirth: { type: Date },
     gender: { type: String },
     imageUrl: { type: String },

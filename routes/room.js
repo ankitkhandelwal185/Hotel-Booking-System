@@ -1,4 +1,5 @@
 const express = require('express')
+const mongoose = require('mongoose')
 const router = express.Router()
 const Room = require('../models/roomSchema.js')
 
@@ -20,20 +21,20 @@ router.createRoom = function(req, res){
     })
 }
 
+//fetch rooms of a hotel with their bookings 
 router.fetchRoom = function(req, res){
-    Room.find({ hotel_id: req.body.hotel_id }).exec(function(err, roomData){
-        if(err)
-            res.status(400).json(err)
-        else if(!roomData)
-            res.status(202).json("no data found")
-        else
-            res.status(200).json(roomData)
-    })
-}
-
-router.fetchRoom = function(req, res){
-    Booking.aggregate([
-        
+    Room.aggregate([
+        { $match: { hotel_id: new mongoose.Types.ObjectId(req.params.hotel_id) }},
+        { $lookup:{
+            from: 'bookings',
+            localField: '_id',
+            foreignField: 'room_id',
+            as: 'bookingData'
+        }},
+        { $project: {
+            'name':1, 'floor':1, 'capacity':1, 'price':1, 'hotel_id':1,
+            'bookingData.start_date':1, 'bookingData.end_date':1, 'bookingData.status':1
+        }}
     ]).exec(function(err, roomData){
         if(err)
             res.status(400).json(err)
