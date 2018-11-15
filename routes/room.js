@@ -21,7 +21,7 @@ router.createRoom = function(req, res){
     })
 }
 
-//fetch rooms of a hotel with their bookings 
+//fetch rooms of a hotel with their bookings
 router.fetchRoom = function(req, res){
     Room.aggregate([
         { $match: { hotel_id: new mongoose.Types.ObjectId(req.params.hotel_id) }},
@@ -46,7 +46,7 @@ router.fetchRoom = function(req, res){
 }
 
 router.deleteRoom = function(req, res){
-    Room.deleteOne({ "_id": req.params.id }).exec(function(err, roomData){
+    Room.deleteOne({ "_id": req.params.room_id }).exec(function(err, roomData){
         if(err)
             res.status(400).json(err)
         else if(!roomData)
