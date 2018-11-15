@@ -1,6 +1,6 @@
 # Hotel-Booking-System
 
-setup
+setup  
 Clone the repo and install the dependencies.
 
 git clone https://github.com/iwayankit/Hotel-Booking-System  
