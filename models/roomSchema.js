@@ -5,7 +5,7 @@ var roomSchema = new Schema({
     name: { type: String, required: true },
     floor: { type: String, required: true },
     capacity: { type: Number },
-    status: { type: Number, default: 0 }, //0->available, 1->booked
+    status: { type: Number, default: 0 }, //0->available, 1->not available
     price: { type: Number },
     hotel_id: { type: Schema.Types.ObjectId },
 }, {

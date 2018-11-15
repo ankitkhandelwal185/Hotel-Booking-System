@@ -45,15 +45,4 @@ router.fetchRoom = function(req, res){
     })
 }
 
-router.deleteRoom = function(req, res){
-    Room.deleteOne({ "_id": req.params.room_id }).exec(function(err, roomData){
-        if(err)
-            res.status(400).json(err)
-        else if(!roomData)
-            res.status(202).json("no data found")
-        else
-            res.status(200).json(roomData)
-    })
-}
-
 module.exports = router

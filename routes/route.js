@@ -9,7 +9,7 @@ var booking = require('./booking.js')
 router.post('/create/hotel', hotel.createHotel)
 router.patch('/update/hotel', hotel.updateHotel)
 router.delete('/delete/hotel/:hotel_id', hotel.deleteHotel)
-router.get('/fetch/hotel', hotel.fetchHotel)
+router.get('/fetch/hotels', hotel.fetchHotel)
 
 router.post('/create/user', user.createUser)
 router.patch('/update/user', user.updateUser)
@@ -18,7 +18,6 @@ router.get('/fetch/user', user.fetchUser)
 
 router.post('/create/room', room.createRoom)
 // router.put('/update/room', room.updateRoom)
-router.delete('/delete/room/:room_id', room.deleteRoom)
 router.get('/fetch/room/:hotel_id', room.fetchRoom)
 
 router.post('/book/room', booking.createBooking)
