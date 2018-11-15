@@ -14,7 +14,7 @@ router.get('/fetch/hotels', hotel.fetchHotel)
 router.post('/create/user', user.createUser)
 router.patch('/update/user', user.updateUser)
 router.delete('/delete/user/:user_id', user.deleteUser)
-router.get('/fetch/user', user.fetchUser)
+router.get('/fetch/users', user.fetchUser)
 
 router.post('/create/room', room.createRoom)
 // router.put('/update/room', room.updateRoom)
